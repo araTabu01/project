@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mobile</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="index.css" />
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+	
+</head>
+
+<body ng-app="AddCart" ng-controller="AddCartCon">
+
+
+	<h1>Cart Lists</h1>
+        <div class="third-page" ng-repeat="mobile in CartList">
+            <div class="left">
+                <img src="C:\Users\Ara Tabasum\Desktop\Final_web\img\{{mobile.Brand}}.jpg" alt="" />
+            </div>
+            <div class="center">
+                <h4>{{mobile.Brand}} &nbsp; {{mobile.Model}}</h4>
+                <h3><span>{{mobile.Ram}}</span> GB RAM</h3>
+                <h1>Item Count: <span>{{mobile.Count}}</span></h1>
+            </div>
+            <div class="right">
+                <span>$</span>
+                <h5>{{mobile.Price}}</h5>
+            </div>
+        </div>
+    
+    <hr />
+    <div class="res">
+        <div class="left">
+            <a id="clearcart" class="btn" ng-click="clearCart(objMobile)">
+                clear Cart</a>
+        </div>
+		 <div class="center">
+           <a id="payment" class="btn" ng-click="payment()">
+                Make Payment</a>
+        </div>
+        <div class="right">
+            <h1>Total : $<span id="t_price">{{Total}}</span></h1>
+        </div>
+    </div>
+	
+	
+	
+
+    
+	<script src="Cart.js"></script>
+    
+</body>
+
+</html>
